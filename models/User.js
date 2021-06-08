@@ -40,7 +40,6 @@ const UserSchema = mongoose.Schema(
         },
         isAnswerCorrect: {
           type: Number,
-          require: true,
         },
       },
     ],

@@ -7,6 +7,7 @@ const cors = require("cors");
 const path = require("path");
 
 const { connectToDatabase } = require("./util/connectToDb");
+const userRouter = require("./routes/userRoute");
 
 dotenv.config();
 const app = express();
@@ -19,7 +20,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(cors());
 
-// app.use("/", indexRouter);
+app.use("/api/user", userRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
